@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2019 Imran Mumtaz
@@ -19,3 +20,40 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+import pytest
+
+from w8ing import utils
+from w8ing.utils import call_if_callable
+
+
+@pytest.mark.unit
+def test_is_callable_true_case():
+    utils.is_callable(lambda: True)
+
+
+@pytest.mark.unit
+def test_is_callable_false_case():
+    with pytest.raises(AssertionError):
+        utils.is_callable("meow")
+
+
+@pytest.mark.unit
+def test_can_get_time_and_type_is_float():
+    time = utils.get_time()
+    assert time
+    assert isinstance(time, float)
+
+
+def test_call_if_callable():
+    string = "cat nip"
+
+    def make_string(string):
+        return string
+
+    assert call_if_callable(lambda: make_string("cat nip")) == string
+
+
+def test_call_if_callable_gets_a_non_callable():
+    with pytest.raises(TypeError):
+        call_if_callable("boots and cat")

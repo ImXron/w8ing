@@ -1,0 +1,23 @@
+language: python
+
+env:
+  # So the travis builder can find the w8ing module. TODO: Should w8ing just be installed via pip local/dev install?
+  - PYTHONPATH=$PYTHONPATH:.
+
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+  - "nightly"
+
+install:
+  - pip install pipenv
+  - pipenv install --dev
+
+script:
+  - pytest
+  - black . --check
+  - mypy w8ing
+
+after_success:
+  - codecov

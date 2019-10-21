@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2019 Imran Mumtaz
@@ -19,3 +20,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+import time
+
+
+def raise_value_error() -> None:
+    raise ValueError
+
+
+def get_delta_time(start_time: float, end_time: float) -> float:
+    return end_time - start_time
+
+
+def get_time() -> float:
+    return time.time()
