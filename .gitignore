@@ -1,0 +1,9 @@
+.idea
+.coverage
+.mypy_cache
+.pyc
+.pytest_cache
+__pycache__
+/build/
+/dist/
+/w8ing.egg-info/

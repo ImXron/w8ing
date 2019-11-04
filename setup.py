@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2019 Imran Mumtaz
@@ -19,3 +20,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+██╗    ██╗ █████╗ ██╗███╗   ██╗ ██████╗
+██║    ██║██╔══██╗██║████╗  ██║██╔════╝
+██║ █╗ ██║╚█████╔╝██║██╔██╗ ██║██║  ███╗
+██║███╗██║██╔══██╗██║██║╚██╗██║██║   ██║
+╚███╔███╔╝╚█████╔╝██║██║ ╚████║╚██████╔╝
+ ╚══╝╚══╝  ╚════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝
+"""
+
+import setuptools
+
+from w8ing.__version__ import __version__
+
+if __name__ == "__main__":
+    # Refer to setup.cfg for all the good stuff.
+    setuptools.setup(version=__version__)

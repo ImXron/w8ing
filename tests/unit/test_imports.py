@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2019 Imran Mumtaz
@@ -19,3 +20,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+import pytest
+
+
+@pytest.mark.unit
+def test_imports():
+    # Auto formatter will remove these import because they are not used. Putting these in a try/except block fixes that.
+    try:
+        import w8ing
+        from w8ing import wait
+        from w8ing.wait import ensure
+        from w8ing.wait import until
+    except ImportError:
+        raise
