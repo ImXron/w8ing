@@ -24,7 +24,7 @@ SOFTWARE.
 
 import pytest
 
-from tests.unit.conftest import get_delta_time, raise_value_error, get_time
+from tests.conftest import get_delta_time, raise_value_error, get_time
 from w8ing import wait
 
 

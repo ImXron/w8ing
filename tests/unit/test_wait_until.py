@@ -25,7 +25,7 @@ import time
 
 import pytest
 
-from tests.unit.conftest import get_delta_time, raise_value_error
+from tests.conftest import get_delta_time, raise_value_error
 from w8ing import wait
 
 
