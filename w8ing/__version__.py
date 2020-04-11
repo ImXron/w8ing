@@ -1,4 +1,5 @@
-"""
+# coding: utf-8
+""" # pragma: no cover
 MIT License
 
 Copyright (c) 2019 Imran Mumtaz
@@ -28,4 +29,4 @@ SOFTWARE.
 ╚███╔███╔╝╚█████╔╝██║██║ ╚████║╚██████╔╝
  ╚══╝╚══╝  ╚════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝
 """
-__version__ = "1.0.0"  # pragma: no cover
+__version__ = "1.0.1"  # pragma: no cover
