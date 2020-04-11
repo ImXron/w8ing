@@ -10,14 +10,14 @@
 [![Build Status](https://travis-ci.com/ImXron/w8ing.svg?branch=master)](https://travis-ci.com/ImXron/w8ing)
 [![codecov](https://codecov.io/gh/ImXron/w8ing/branch/master/graph/badge.svg)](https://codecov.io/gh/ImXron/w8ing)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)
 [![image](https://img.shields.io/pypi/v/w8ing.svg)](https://python.org/pypi/w8ing)
 [![image](https://img.shields.io/pypi/pyversions/w8ing.svg)](https://python.org/pypi/w8ing)
 ___
 
 **_W8ing_** is (as the great Kenneth Reitz would say) waiting and or polling **_for humans_**.
 
-Get it? The **_8_** replaces the **_a_** in **_waiting_** :wink: :woman_shrugging:.
+Get it? The **_8_** replaces the **_ait_** in **_waiting_** :wink: :woman_shrugging:.
 
 Let **_W8ing_** help you nuke all your hard calls to `time.sleep()` and make your tests less flakey :metal:.
 ___
@@ -35,7 +35,7 @@ Wait **_until_** some condition is true:
 from w8ing import wait
 
 # This example uses an imaginary function that doesn't immediately give us the value we want.
-result = wait.until(condition=lambda: get_cat_treats(8) == 8)
+result = wait.until(lambda: get_cat_treats(8) == 8)
 
 # By default, this wait will return whether or not the condition was true or not.
 result
@@ -82,10 +82,11 @@ cat_treats = []
 
 # The call_each_try function gets called each time the condition gets evaluated, 
 result = wait.until(lambda: len(cat_treats) > 8, call_each_try=lambda: cat_treats.append("treat"), retry_time=0.5)
+
 result
 True
 
-# The cat will be pleased.
+# The cat will be pleased, very pleased.
 ```
 
 ### But wait, there's more!
@@ -96,13 +97,17 @@ What if you need to **_ensure_** that some condition remains true?? Got you cove
 from w8ing import wait
 
 cat_nip = ["cat nip"] * 10
-result = wait.ensure(lambda: len(cat_nip) > 5, call_each_try=lambda: cat_nip.pop(), retry_time=1, timeout=2)
+
+# Set retry delay to 0 so we can evaluate the condition as fast as possible! 
+result = wait.ensure(lambda: len(cat_nip) > 5, call_each_try=lambda: cat_nip.pop(), retry_time=0, timeout=2)
 
 result
 True
 
-# The cat will extra intoxicated by this high quality cat nip, good job.
+# The cat will get extra intoxicated by this high quality cat nip, good job.
 ```
+**Note:** Due to computing power and other operating system processes, it is possible that the **condition** could
+ flicker to false and back to true before being able to catch it! 
 
 ## Contribute
 Feel free to open an issue and once you get a green light, submit a PR!

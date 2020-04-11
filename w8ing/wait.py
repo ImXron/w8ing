@@ -1,3 +1,4 @@
+# coding: utf-8
 """
 MIT License
 
@@ -27,11 +28,6 @@ SOFTWARE.
 ██║███╗██║██╔══██╗██║██║╚██╗██║██║   ██║
 ╚███╔███╔╝╚█████╔╝██║██║ ╚████║╚██████╔╝
  ╚══╝╚══╝  ╚════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝
-
-TODO:
-    * Option to have a call parameter (like condition) and another to take that value and see if it's True.
-        * function=lambda: 1+1, check_expression=lambda x: x == 2.
-    * Tox?
 """
 import time
 from typing import Any, Callable, Tuple, Type, Optional
